@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-profile-page-v0.0.1';
+const CACHE_NAME = 'pwa-profile-page-0.0.1';
 const OFFLINE_URL = '/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -7,8 +7,8 @@ const PRECACHE_ASSETS = [
   '/styles.css',
   '/offline.html',
   '/manifest.json',
-  '/icons/icon-192.svg',
-  '/icons/icon-512.svg',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
   '/assets/images/profile-photo.jpg',
 ];
 
