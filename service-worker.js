@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-profile-page-0.0.4';
+const CACHE_NAME = 'pwa-profile-page-0.0.5';
 const OFFLINE_URL = '/offline.html';
 
 const PRECACHE_ASSETS = [
