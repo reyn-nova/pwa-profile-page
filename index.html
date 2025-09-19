@@ -44,12 +44,15 @@
   
       if (permission === 'granted') {
         const registration = await navigator.serviceWorker.getRegistration();
+
+        const uniqueTag = 'notif-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+
         if (registration) {
-          registration.showNotification('Hello from your PWA!', {
-            body: 'This is a push notification triggered by a button.',
+          registration.showNotification("Reynald's PWA", {
+            body: 'Have a good day!',
             icon: '/icons/icon-192.png',
             vibrate: [100, 50, 100],
-            tag: 'button-notification'
+            tag: uniqueTag,
           });
         }
       } else {
