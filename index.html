@@ -25,8 +25,40 @@
     <main>
       <h1 id="profile-name">Reynald Prabha Nova</h1>
       <h2 id="profile-job">Front End Engineer</h2>
+
+      <button id="notify-btn">Send Notification</button>
     </main>
   </div>
+
+  <script>
+    async function triggerNotification() {
+      if (!('Notification' in window)) {
+        alert('This browser does not support notifications.');
+        return;
+      }
+  
+      let permission = Notification.permission;
+      if (permission === 'default') {
+        permission = await Notification.requestPermission();
+      }
+  
+      if (permission === 'granted') {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          registration.showNotification('Hello from your PWA!', {
+            body: 'This is a push notification triggered by a button.',
+            icon: '/icons/icon-192.png',
+            vibrate: [100, 50, 100],
+            tag: 'button-notification'
+          });
+        }
+      } else {
+        alert('Notification permission denied.');
+      }
+    }
+  
+    document.getElementById('notify-btn').addEventListener('click', triggerNotification);
+  </script>
   
   <script>
     if ('serviceWorker' in navigator) {

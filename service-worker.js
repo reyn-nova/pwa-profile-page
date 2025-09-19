@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-profile-page-0.0.3';
+const CACHE_NAME = 'pwa-profile-page-0.0.4';
 const OFFLINE_URL = '/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -68,4 +68,15 @@ self.addEventListener('fetch', event => {
   } else {
     event.respondWith(handleAssetRequest(req));
   }
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(
+    clients.matchAll({ type: 'window' }).then(clientList => {
+      if (clients.openWindow) {
+        return clients.openWindow('/');
+      }
+    })
+  );
 });
