@@ -1,0 +1,58 @@
+:root {
+    --teal: #0ea5a4;
+    --bg: #f8fafc;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  }
+  
+  body {
+    background: var(--bg);
+    color: #1e2838;
+    background-color: #1e2838;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app {
+    max-width: 300px;
+    padding: 36px;
+    border-radius: 36px;
+    background: white;
+    box-shadow: 0 6px 24px rgba(2, 6, 23, 0.08);
+    text-align: center;
+  }
+  
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 36px;
+    object-fit: cover;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #1e2838;
+  }
+  
+  h2 {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    color: #1e2838;
+  }
+  
+  .offline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 40px;
+  }
+  

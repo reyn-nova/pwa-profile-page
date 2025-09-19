@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0ea5a4" />
+
+  <title>Profile PWA</title>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icons/icon-192.svg">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+
+  <meta name="description" content="Profile page Progressive Web App with offline support." />
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app profile">
+    <header>
+      <img src="/assets//images/profile-photo.jpg" alt="profile photo" class="profile-photo">
+    </header>
+
+    <main>
+      <h1 id="profile-name">Reynald Prabha Nova</h1>
+      <h2 id="profile-job">Front End Engineer</h2>
+    </main>
+  </div>
+  
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('SW registered', reg))
+        .catch(err => console.warn('SW registration failed', err));
+    }
+  </script>
+</body>
+</html>
